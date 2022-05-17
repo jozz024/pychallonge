@@ -1,4 +1,5 @@
 from challonge import tournaments, matches, participants, attachments
+from challonge.wrapper import ChallongeTournament
 from challonge.api import (
     set_credentials,
     get_credentials,

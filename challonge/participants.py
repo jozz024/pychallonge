@@ -80,3 +80,11 @@ def randomize(tournament):
 
     """
     api.fetch("POST", "tournaments/%s/participants/randomize" % tournament)
+
+def clear(tournament):
+    """Delete all participants in the tournament.
+
+    Only applicable before a tournament has started.
+
+    """
+    api.fetch("DELETE", "tournaments/%s/participants/clear" % tournament)
