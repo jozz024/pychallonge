@@ -1,4 +1,5 @@
-from . import tournaments, matches, participants, set_credentials
+from . import tournaments, matches, participants
+from .api import set_credentials
 
 class ChallongeTournament:
     def __init__(self, id, username, api_key):
