@@ -59,6 +59,9 @@ class ChallongeTournament:
 
     # Matches
 
+    def refresh_matches(self):
+        self.matches = matches.index(self.tournament["id"])
+
     def get_matches(self, state = "all", participant_id = None):
         return matches.index(self.tournament["id"], state=state, participant_id = participant_id)
 
