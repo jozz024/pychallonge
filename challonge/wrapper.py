@@ -5,11 +5,17 @@ class ChallongeTournament:
     def __init__(self, id, username, api_key):
         # Tell pychallonge about your [CHALLONGE! API credentials](http://api.challonge.com/v1).
         set_credentials(username, api_key)
-        self.tournament = tournaments.show(id)
+        if id != None:
+            self.tournament = tournaments.show(id)
+            self.matches = self.get_matches()
+            self.participants = self.get_all_participants()
+
+    # Tournaments
+    def create_tournament(self, name, type, url):
+        self.tournament = tournaments.create(name, url, type)
         self.matches = self.get_matches()
         self.participants = self.get_all_participants()
 
-    # Tournaments
     def start_tournament(self):
         tournaments.start(self.tournament["id"])
 
